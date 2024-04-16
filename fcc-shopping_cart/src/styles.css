@@ -1,0 +1,197 @@
+/**
+* ! Changing the default styles of the browser
+**/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: sans-serif;
+}
+
+i{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+/**
+* ! Navbar styles are here 
+**/
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    padding: 25px 60px;  /* 25 gori doli, 60 desno livo */
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+
+.cart{
+    position: relative;
+    background-color: white;
+    color: #000000;
+    padding: 5px;
+    font-size: 30px;
+    border-radius: 4px;
+
+}
+
+.cartAmount{
+    position: absolute;
+    top: -10px;
+    right: -8px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+/**
+* ! Shop items styles are here  
+**/
+
+.shop{
+    display: grid;
+    grid-template-columns: repeat(4, 223px);
+    gap: 30px;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .shop{
+        grid-template-columns: repeat(2, 223px);
+    }
+}
+
+@media (max-width: 512px) {
+    .shop{
+        grid-template-columns: repeat(1, 223px);
+    }
+}
+
+.item{
+    border: 2px solid #000000;
+    border-radius: 4px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+.price-quantity{
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.bi-dash-circle{
+    color: red;
+}
+
+.bi-plus-circle{
+    color: green;
+    align-items: center;
+}
+
+/**
+* ! Style rules for label and some buttons  
+**/
+
+.text-center{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.HomeBtn{
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.bi-x-lg{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/**
+* ! Style rules for shopping cart 
+**/
+
+.shopping-cart{
+    display: grid;
+    grid-template-columns: repeat(1, 520px);
+    justify-content: center;
+    gap: 15px;
+}
+
+/**
+* ! Style rules for shopping cart item
+**/
+
+.cart-item{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.title-price-x{
+    width: 300px;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.title-price{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item-price{
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.checkout{
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.removeAll{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 10px;
+}

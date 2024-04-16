@@ -1,0 +1,11 @@
+RUTERI:
+putanja -> req.path 
+query string -> const {name1, name2} = req.body 
+:pathArg -> const par = req.params.parametar
+	ako ih ima više const { productID, productName } = req.params
+	direktno pristupanje: req.params.pathArg
+
+
+
+JS SINTAKSA:
+imeListe.includes()  -> provjeri sadrži li nešto lista 

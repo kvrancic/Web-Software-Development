@@ -1,0 +1,33 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading{
+    margin-bottom: 1em;
+}
+
+.percentage{
+    font-size: 3em;
+}
+
+.line{
+    background-color: orangered;
+    width: 50vh;
+    height: 1vh;
+    transform-origin: center left;
+    border-radius: 5px;
+    z-index:3;
+}

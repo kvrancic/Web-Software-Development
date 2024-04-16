@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Society</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="https://kit.fontawesome.com/e9671b4ec3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="grid">
+        <div class="navbar">
+            <a class="logo-name" href="http://localhost:3000/">
+                <i class="fa-solid fa-shield-cat fa-xl"></i>
+                <h2><%= currentCategory ? currentCategory : "Pet" %> society</h2>
+            </a>
+            <div class="category-cart">
+                <div id="curr-category">Have a nice day!</div>
+                <div class="cart-search">
+                    <a class="cart" onclick="location.href='../cart', refresh()">
+                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                        <div id="cart-amount" class="cart-amount">
+                            <%= cartAmount %>
+                        </div>
+                    </a>
+                    <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+                </div>
+            </div>
+        </div>
+        <div class="categories sidebar">
+            <% categories.forEach(category => { %>
+                <a href="#">
+                            <form method="get" action="/home/getProducts/<%= category.name %>">
+                                <a href="#" onclick="this.parentNode.submit();
+                            document.getElementById('curr-category').innerHTML =  '<%=category.name%>';">
+                                    <p><%=category.name.toUpperCase() %><p>
+                                </a>
+
+                            </form>
+            <% }); %>
+        </div>
+        <div class="footer sidebar">
+            <p>CONTACT US</p>
+            <p>NEWSLETTER</p>
+            <p>SUBSCRIBE</p>
+        </div>
+        <div class="hero">
+            <h2 id="hero-text" class="hero-text">Find your new best friend</h2>
+        </div>
+        <div class="shop" id="shop">
+            <% products.forEach(product => { %>
+                <div class="item">
+                    <img width="218" src="../../<%=product.image%>" alt="">
+                    <div class="details">
+                        <form action="/cart/add/<%=product.name %>" method="post" onsubmit="return updateCart(event, '<%=product.name%>', '<%=product.count%>')">
+                            <input type="hidden" name="name" value="<%=product.name %>">
+                            <input type="hidden" name="count" value="<%=product.count %>">
+
+                            <div class="buy-button" onclick = "
+                            this.parentNode.submit(); 
+                            document.getElementById('cart-amount').innerHTML++;
+                            return false;
+                        ">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <div id ="quantity" class="quantity" onclick="document.getElementById('quantity').innerHTML++;"><%= cartMap[product.name] ? cartMap[product.name] : 0 %></div> 
+                            
+                        </div>
+
+                        </form>                        
+                        
+                        <h3><%= product.name %></h3>
+                    </div>
+                </div>
+
+            <% }); %>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.getElementById("buyButton").addEventListener("click", function() {
+    fetch('/path/to/your/api')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        window.location.reload();
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+</script>
+
+
+</html>

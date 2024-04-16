@@ -1,0 +1,37 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container div{
+    padding: 5em;
+    margin: 2em;
+    text-align: center;
+}
+
+.right{
+    
+    background-color: darkred;
+    color: white;
+}
+
+.left{
+    
+    background-color: darkred;
+    color: white;
+}

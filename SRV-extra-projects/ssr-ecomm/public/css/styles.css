@@ -1,0 +1,294 @@
+/**
+* ! Changing the default styles of the browser
+**/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+i{
+    cursor: pointer;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+/**
+* ! GRID CONTAINER 
+**/
+
+.grid{
+    display: grid; 
+    grid-template-columns: 20% 80%;
+    grid-template-rows: auto 400px auto 200px;
+    grid-template-areas: 
+    "nav nav"
+    "kat her"
+    "foo sho"
+    ". .";
+}
+
+
+
+/**
+* ! Navbar styles are here 
+**/
+
+.navbar{
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green;
+    padding: 25px 60px;
+    font-size: 20px;
+}
+
+.logo-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color:white;
+    gap: 10px;
+    margin-right: 40px;
+}
+
+.logo-name:hover{
+    transition: all 0.2s ease-in-out;
+    font-size: larger;
+}
+
+.category-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    flex: 1;
+}
+
+.cart-search{
+    position: absolute;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.cart-amount{
+    position: absolute;
+    top: -15px;
+    right: 70px;
+    padding: 3px;
+    background-color: red;
+    font-size: 12px;
+    border-radius: 9px;
+}
+
+.cart:hover{
+    font-size: larger;
+    transition: all 0.4s ease-in-out;
+}
+
+.cart-amount:empty{
+    display: none;
+}
+
+
+/**
+* ! MAIN 
+**/
+
+.categories {
+    grid-area: kat;
+    margin-top: 300px;
+    padding-top: 40px;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.categories p {
+    margin: 15px 0;
+    color: green;
+    transition: all 0.2s ease-in-out;
+}
+
+.categories p:hover {
+    color: orange;
+    font-size: 28px;
+}
+
+.footer {
+    grid-area: foo;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.hero{
+    grid-area: her;
+    background-image: url('https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-position: bottom center;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+.hero-text{
+    position: relative; 
+    bottom: -280px;
+    font-size: 48px;
+    background: rgba(0,128,0, 0.7);
+    color: white;
+    padding: 8px;
+}
+
+.shop{
+    grid-area: sho;
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, 223px);
+    grid-template-rows: 350px 350px;
+    gap: 30px;
+    justify-content: space-evenly;
+    padding-left: 50px;
+    
+}
+
+.sidebar{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    align-self: center;
+}
+
+
+@media (max-width: 1024px){
+    .grid{
+        display: grid; 
+        grid-template-columns: minmax(200px, auto) minmax(80%, auto);
+        grid-template-rows: auto 400px auto auto;
+        grid-template-areas: 
+        "nav nav"
+        "her her"
+        "kat sho"
+        "foo sho"
+    }
+    .categories{
+        margin-top: 20px;
+        margin-right: 40px;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .category-cart{
+        gap: 200px;
+    }
+
+    .shop{
+        grid-template-columns: repeat(2, 223px);
+    }
+
+}
+
+/**
+* ! DIJELOVA SHOPA
+**/
+
+.item {
+    position: relative;
+}
+    
+.item img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.item .details {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.5);
+padding: 10px;
+box-sizing: border-box;
+color: #fff;
+opacity: 1;
+transition: opacity 0.3s ease-in-out;
+}
+
+.item:hover .details {
+opacity: 1;
+}
+
+.item .buy-button {
+    display: none;
+    position: absolute;
+    bottom: -10px;
+    left: 70%;
+    transform: translateX(-50%);
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    justify-content: center;
+}
+
+.item:hover .buy-button {
+    display: block;
+    transform: translateY(-20px);
+}
+
+.item:hover .buy-button i {
+    margin-right: 5px;
+}
+
+.item h3 {
+    margin: 10px 0 5px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.item:hover .buy-button {
+    display: block;
+}
+
+.item .buy-button:hover {
+    transform: translateY(-25px);
+}
+
+/**
+* ! Style rules for shopping cart 
+**/
+
+.shopping-cart{
+    grid-area: sho;
+    justify-content: center;
+}
+

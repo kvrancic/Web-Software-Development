@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Society</title>
+    <link rel="stylesheet" href="styles/styles-cart.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/e9671b4ec3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="grid">
+        <div class="navbar">
+            <a class="logo-name" href="index.html">
+                <i class="fa-solid fa-shield-cat fa-xl"></i>
+                <h2>Pet society</h2>
+            </a>
+            
+            <div class="cart-search">
+                <a class="cart" href="cart.html">
+                    <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                    <div id="cart-amount" class="cart-amount"></div>
+                </a>
+                <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+            </div>
+            
+        </div>
+        <div class="hero">
+            <h2 class="hero-text">New best friend incoming!</h2>
+        </div>
+        <div class="shopping-cart" id="shopping-cart">
+            <h2 class="cart-heading">SHOPPING CART</h2>
+            <div class="products-cart">
+                First column signifies the product's name, and the other one represents its quantity
+            </div>
+            <div id="cart-items" class="cart-items">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="scripts/data.js"></script>
+<script src="scripts/cart.js"></script>
+
+</html>

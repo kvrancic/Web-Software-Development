@@ -1,0 +1,16 @@
+<%- include('layout/header') %>
+<div class="container">
+    <div><h3>Edit user <%= user.name %></h3></div>
+    <form action="/update/<%= user._id %>" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<%= user.name  %>"> <br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" value="<%= user.email  %>"> <br>
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" value="<%= user.phone  %>"> <br>
+        <input type="submit" value="Add todo">
+
+    </form>
+</div>
+
+<% include('layout/footer') %>

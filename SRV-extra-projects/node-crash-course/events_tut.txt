@@ -1,0 +1,4 @@
+ideja: offloadanje 
+JS je sinkrona i jednodretvena 
+
+setInterval vrti petlju svakix xxxx milisekundi, setTimeout ga izbaci nakon prvog prolaska 

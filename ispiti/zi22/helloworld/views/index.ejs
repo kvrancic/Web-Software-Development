@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles.css"> 
+</head>
+<body>
+    <h1 class = "title">Please subscribe...</h1>
+    <div class="container">
+        <% types.forEach(el => { %>
+            <div class="square">
+                <div class="category-title">
+                    <span><%=el.typeName %></span>
+                    <span> (<%= el.noOfSubs %>)</span>
+                </div>
+                <div class="image">
+                    <img src="<%= el.photo %>" alt="">
+                </div>
+                <form action="/subscribe/<%=el.typeName %>" method="get">
+                    <button name="category" value="<%=el.typeName %>">Subscribe</button>
+                </form>
+            </div>
+        <% }) %>
+        
+    </div>
+</body>
+</html>
